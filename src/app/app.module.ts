@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireStorageModule, BUCKET } from '@angular/fire/storage';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { AppComponent } from './app.component';
 
@@ -29,7 +29,6 @@ import 'firebase/storage';
     AngularFireStorageModule
   ],
   providers: [
-    { provide: BUCKET, useValue: 'angular-firebase-blog-c0906.appspot.com' }
   ],
   bootstrap: [AppComponent]
 })

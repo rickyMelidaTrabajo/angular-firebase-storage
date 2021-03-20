@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
-import 'firebase/storage';
 
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
@@ -25,7 +24,7 @@ export class AppComponent {
     // Generate a random ID
     const randomId = Math.random().toString(36).substring(2);
     console.log(randomId);
-    const filepath = `images/${randomId}`;
+    const filepath = `images/image-${randomId}`;
 
     const fileRef = this.storage.ref(filepath);
 
@@ -40,5 +39,6 @@ export class AppComponent {
       finalize(() => this.uploadURL = fileRef.getDownloadURL())
     ).subscribe();
   }
+
 
 }
